@@ -33,6 +33,9 @@ class Database:
     def remove(self,id):
         self.cur.execute("delete from story where id=?",(id,))
         self.con.commit()
+    def removes(self):
+        self.cur.execute("DELETE FROM story")
+        self.con.commit()
     def update(self,id,designation,quantite,marque_et_type,ref_fournisseur,casse,codee):
         self.cur.execute("update story set designation=?,"
                          "quantite=?,"
